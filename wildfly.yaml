@@ -73,13 +73,7 @@
       ansible.builtin.systemd:
         name: wildfly.service
         enabled: true
-    - name: To add user
-      ansible.builtin.user:
-        name: user1
-        create_home: yes
-        group: wildfly
-        home: /opt/wildfly/standalone/configuration/mgmt-users.properties
-        shell: adduser.sh
+   
      
     
 
