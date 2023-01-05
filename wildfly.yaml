@@ -36,6 +36,28 @@
         group: wildfly
         owner: wildfly
         recurse: true
+    - name: To create directory
+      ansible.builtin.file:
+        path: /etc/wildfly
+        owner: wildfly
+        group: wildfly
+        state: directory 
+    - name: To copy conf file
+      ansible.builtin.copy:
+        src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf 
+        dest: /etc/wildfly/
+    - name: To copy launch file
+      ansible.builtin.copy:
+        src: /opt/wildfly/docs/contrib/scripts/systemd/launch.sh
+        dest: /opt/wildfly/bin/
+    - name: add execute permissions to shell files
+      ansible.builtin.command: "sudo sh -c 'chmod +x /opt/wildfly/bin/*.sh'"
+    - name: To copy systemd file
+      ansible.builtin.copy:
+        src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service
+        dest: /etc/systemd/system/
+    
+
       
 
     
