@@ -30,6 +30,12 @@
         src: /opt/wildfly-16.0.0.Final
         dest: /opt/wildfly/latest
         state: link
+    - name: To change the ownership
+      ansible.builtin.file:
+        dest: /opt/wildfly
+        group: wildfly
+        owner: wildfly
+        recurse: true
       
 
     
