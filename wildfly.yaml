@@ -28,9 +28,7 @@
     - name: To create symbolic link
       ansible.builtin.file:
         src: /opt/wildfly-16.0.0.Final
-        dest: /opt/wildfly
-        group: wildfly
-        owner: wildfly
+        dest: /opt/wildfly/latest
         state: link
       
 
