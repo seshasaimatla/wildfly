@@ -74,7 +74,12 @@
         name: wildfly.service
         enabled: true
     - name: To add user
-      ansible.builtin.command: "/opt/wildfly/bin/sudo /opt/wildfly/bin/add-user.sh"
+      ansible.builtin.user:
+        name: devops
+        create_home: yes
+        group: wildfly
+        home: /opt/wildfly/standalone/configuration/mgmt-users.properties
+        shell: adduser.sh
      
     
 
