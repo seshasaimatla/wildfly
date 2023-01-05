@@ -75,7 +75,7 @@
         enabled: true
     - name: To add user
       ansible.builtin.user:
-        name: devops
+        name: user1
         create_home: yes
         group: wildfly
         home: /opt/wildfly/standalone/configuration/mgmt-users.properties
