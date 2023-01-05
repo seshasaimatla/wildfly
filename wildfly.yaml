@@ -75,12 +75,12 @@
         enabled: true
     - name: to configure user
       ansible.builtin.expect:
-        command: sudo /opt/wildfly/bin/add-user.sh
+        command: /opt/wildfly/bin/add-user.sh
         responses:
           Question:
             - What type of user do you wish to add?
             - Enter the details of the new user to add. 
-            
+
    
      
     
