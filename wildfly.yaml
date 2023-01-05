@@ -49,13 +49,13 @@
         remote_src: true
     - name: To copy launch file
       ansible.builtin.copy:
-        src: /opt/wildfly/docs/contrib/scripts/systemd/launch.sh
+        src: /opt/wildfly/latest/docs/contrib/scripts/systemd/launch.sh
         dest: /opt/wildfly/bin/
     - name: add execute permissions to shell files
       ansible.builtin.command: "sudo sh -c 'chmod +x /opt/wildfly/bin/*.sh'"
     - name: To copy systemd file
       ansible.builtin.copy:
-        src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service
+        src: /opt/wildfly/latest/docs/contrib/scripts/systemd/wildfly.service
         dest: /etc/systemd/system/
     
 
