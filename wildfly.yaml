@@ -73,6 +73,14 @@
       ansible.builtin.systemd:
         name: wildfly.service
         enabled: true
+    - name: To add user
+      ansible.builtin.user:
+        name: Management User
+        shell: add-user.sh
+        create_home: yes 
+        home: /opt/wildfly/bin
+        group: wildfly
+        state: present
     
 
       
