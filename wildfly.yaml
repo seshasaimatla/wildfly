@@ -20,18 +20,11 @@
         home: /opt/wildfly
         group: wildfly
         state: present
-    - name: To download wildflyapp
-      ansible.builtin.get_url:
-        url: https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz
-        dest: /tmp/wildfly-16.0.0.Final
-        group: wildfly
-        owner: wildfly
     - name: To extract wildfly
       ansible.builtin.unarchive:
-        src: /tmp/wildfly-16.0.0.Final
-        dest: /opt/ 
-        group: wildfly
-        owner: wildfly
+        src: https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz
+        remote_src: yes
+        dest: /opt/
       
 
     
