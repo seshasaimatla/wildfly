@@ -59,6 +59,20 @@
         src: /opt/wildfly/latest/docs/contrib/scripts/systemd/wildfly.service
         dest: /etc/systemd/system/
         remote_src: true
+    - name: reload daemon and start wildfly
+      ansible.builtin.systemd:
+        name: wildfly.service
+        daemon_reload: yes
+        enabled: yes
+        state: started
+    - name: restart wildfly 
+      ansible.builtin.systemd:
+        name: wildfly.service
+        state: restarted
+    - name: enable wildfly service 
+      ansible.builtin.systemd:
+        name: wildfly.service
+        enabled: true
     
 
       
