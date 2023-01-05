@@ -44,7 +44,7 @@
         state: directory 
     - name: To copy conf file
       ansible.builtin.copy:
-        src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf 
+        src: /opt/wildfly/latest/docs/contrib/scripts/systemd/wildfly.conf 
         dest: /etc/wildfly/
         remote_src: true
     - name: To copy launch file
