@@ -25,6 +25,12 @@
         src: https://download.jboss.org/wildfly/16.0.0.Final/wildfly-16.0.0.Final.tar.gz
         remote_src: yes
         dest: /opt/
+    - name: To create symbolic link
+      ansible.builtin.file:
+        src: /opt/wildfly-16.0.0.Final
+        dest: /opt/wildfly
+        group: wildfly
+        owner: wildfly
       
 
     
