@@ -74,7 +74,7 @@
         name: wildfly.service
         enabled: true
     - name: To add user
-      ansible.builtin.command: "sudo /opt/wildfly/bin/add-user.sh"
+      ansible.builtin.command: "./add-user.sh -u 'adminuser1' -p 'password1!' "
      
     
 
